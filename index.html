@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Study Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">AI-related adaptive UI demo</p>
+      <h1>Adaptive Study Dashboard</h1>
+      <p class="subtitle">A small interface that adjusts to your preferences and study needs.</p>
+    </div>
+    <button id="themeToggle" class="secondary" type="button" aria-pressed="false">Switch to dark mode</button>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Personalize your workspace</h2>
+      <p>Choose how you prefer to study. The dashboard updates immediately.</p>
+      <div class="controls">
+        <label for="experience">Experience level
+          <select id="experience">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+        <label for="goal">Today's study goal
+          <select id="goal">
+            <option value="short">Quick review (15 minutes)</option>
+            <option value="regular" selected>Regular session (30 minutes)</option>
+            <option value="deep">Deep study (60 minutes)</option>
+          </select>
+        </label>
+        <label for="fontSize">Text size
+          <select id="fontSize">
+            <option value="normal">Normal</option>
+            <option value="large">Large</option>
+          </select>
+        </label>
+      </div>
+      <div class="check-row">
+        <input id="showHints" type="checkbox" checked>
+        <label for="showHints">Show learning hints</label>
+      </div>
+    </section>
+
+    <section class="panel recommendation" aria-live="polite">
+      <h2 id="welcome">Your study plan</h2>
+      <p id="recommendationText">Start with a short review, then practice one example.</p>
+      <div class="progress-track" aria-label="Study session progress">
+        <div id="progressBar" class="progress-bar" style="width: 50%"></div>
+      </div>
+      <p id="goalSummary" class="small">Suggested session: 30 minutes</p>
+      <div id="hintBox" class="hint">
+        <strong>Learning hint:</strong> Break a large topic into smaller tasks and check your understanding after each one.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Study tasks</h2>
+      <p class="muted">Mark a task complete to update the progress indicator.</p>
+      <ul id="taskList" class="task-list">
+        <li><label><input type="checkbox" class="task"> Review notes</label></li>
+        <li><label><input type="checkbox" class="task"> Try one practice question</label></li>
+        <li><label><input type="checkbox" class="task"> Write a short summary</label></li>
+      </ul>
+      <p id="progressText" class="small">0 of 3 tasks completed</p>
+    </section>
+
+    <section class="panel">
+      <h2>How does it adapt?</h2>
+      <ul>
+        <li>It changes the suggested plan based on the selected experience level and study goal.</li>
+        <li>It changes text size and color theme based on user settings.</li>
+        <li>It updates progress as tasks are completed.</li>
+        <li>It uses simple, rule-based personalization. It does not train a machine-learning model or send data to a server.</li>
+      </ul>
+    </section>
+  </main>
+  <footer><p>Student project demonstration. Preferences stay in this browser session only.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+:root { --bg: #f3f6fb; --panel: #ffffff; --text: #202b3c; --muted: #5b6678; --accent: #245fbd; --line: #d9e1ec; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+body.dark { --bg: #151a23; --panel: #222a36; --text: #f1f4f8; --muted: #c1cad8; --accent: #8bb8ff; --line: #3c485b; }
+body.large-text { font-size: 1.15rem; }
+.site-header { max-width: 960px; margin: 0 auto; padding: 2rem 1.2rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+h1 { margin: .1rem 0 .35rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h2 { margin-top: 0; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-size: .78rem; font-weight: bold; margin-bottom: .3rem; }
+.subtitle, .muted, .small, footer { color: var(--muted); }
+main { max-width: 960px; margin: 0 auto; padding: 0 1.2rem 2rem; display: grid; gap: 1rem; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem; box-shadow: 0 3px 12px rgba(20, 40, 70, .04); }
+.controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+label { display: block; font-weight: 600; }
+select { display: block; width: 100%; margin-top: .35rem; padding: .65rem; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); }
+button { border: 0; border-radius: 8px; padding: .7rem 1rem; cursor: pointer; font-weight: 700; }
+button:focus, select:focus, input:focus { outline: 3px solid var(--accent); outline-offset: 2px; }
+.secondary { background: var(--panel); color: var(--text); border: 1px solid var(--line); }
+.check-row { display: flex; gap: .55rem; align-items: center; }
+.check-row label { font-weight: normal; }
+.check-row input { width: 1rem; height: 1rem; }
+.recommendation { border-left: 5px solid var(--accent); }
+.progress-track { height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; margin-top: 1rem; }
+.progress-bar { height: 100%; background: var(--accent); transition: width .2s ease; }
+.hint { margin-top: 1rem; padding: .85rem; border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
+.task-list { padding-left: 1.2rem; }
+.task-list li { margin: .65rem 0; }
+.task-list label { font-weight: normal; }
+.task-list input { margin-right: .5rem; }
+footer { text-align: center; padding: 0 1rem 1.5rem; font-size: .9rem; }
+@media (max-width: 680px) { .site-header { display: block; } .site-header button { margin-top: .5rem; } .controls { grid-template-columns: 1fr; } }
